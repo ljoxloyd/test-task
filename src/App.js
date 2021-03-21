@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css"
+import Validator from './Validator';
+import SomeComponent from './SomeComponent'
+import { Container } from '@material-ui/core';
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <Container maxWidth="md">
+      <Validator num="1">
+        <SomeComponent num="1">
+          <Validator num="2">
+
+          </Validator>
+        </SomeComponent>
+        <SomeComponent num="2">
+          <Validator num="3">
+            <Validator num="4">
+
+            </Validator>
+          </Validator>
+        </SomeComponent>
+        <Validator num="5">
+
+        </Validator>
+      </Validator>
+    </Container>
+  )
 }
 
 export default App;
