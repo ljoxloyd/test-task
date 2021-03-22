@@ -7,21 +7,21 @@ export default class Validator extends React.Component {
   constructor(props) {
     super(props);
 
-    //array that must be passed down through context to be filled with validate methods
+    //массив который нужно передать детям через контекст 
     this.decendantsMethods = []; 
-    //state to visually represent a call of method "validate"
+    //состояние чтобы визуально отображать работу метода "validate"
     this.state = {isValidated: false}
   }
 
   componentDidMount() {
-    //push own "validate" method to array provided by context
+    //добавляю собственный "validate" метод к массиву полученному через контекст
     this.context.push(this.validate);
   }
 
   validate = () => {
-    //perform some action (in this case toggel state)
+    //выполняет некое действие (в данном случае переключение состояния)
     this.setState(state => ({isValidated: !state.isValidated}) ) 
-    //and call "validate" in every child 
+    //и вызывает каждый "validate" из массива заполненого компонентами-детьми
     this.decendantsMethods.forEach(method => method());
   };
 
