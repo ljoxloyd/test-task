@@ -1,4 +1,8 @@
+body {
+  background: whitesmoke;
+}
+
 div {
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
 }

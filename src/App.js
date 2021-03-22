@@ -1,7 +1,6 @@
 import "./App.css"
 import Validator from './Validator';
-import SomeComponent from './SomeComponent'
-import { Container } from '@material-ui/core';
+import { Container, Paper } from '@material-ui/core';
 
 function App() {
 
@@ -29,3 +28,14 @@ function App() {
 }
 
 export default App;
+
+function SomeComponent({children, num}) {
+  return (
+    <Paper variant="outlined">
+      <h3>
+        SomeComponent № {num}
+      </h3>
+      {children}
+    </Paper>
+  )
+};
